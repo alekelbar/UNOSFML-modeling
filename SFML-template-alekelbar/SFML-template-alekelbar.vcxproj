@@ -134,10 +134,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CardModel.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CardModel.hpp" />
+    <ClInclude Include="Game.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\blue_0.png" />
