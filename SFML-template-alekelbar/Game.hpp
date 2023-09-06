@@ -1,16 +1,20 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "Menu.hpp"
+#include "Table.h"
+
 
 class Game
 {
 private:
-	// variables...
-	// eventos
+	// Variables...
+	// Events
 	sf::Event ev;
-	// ventana
+	// Windows
 	sf::RenderWindow* window;
 	sf::VideoMode videoMode;
-
+    // Scene
+	Scene* scene;
 
 	// funciones de inicialización
 	void initVariables();
@@ -26,6 +30,10 @@ public:
 	void render();
 
 	void pollEvents();
+
+	inline void setScene(Scene* scene) {
+		this->scene = scene;
+	}
 
 	// funtions
 	bool playing();

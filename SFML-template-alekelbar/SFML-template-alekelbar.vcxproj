@@ -135,11 +135,17 @@
   <ItemGroup>
     <ClCompile Include="CardModel.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Table.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CardModel.hpp" />
-    <ClInclude Include="Game.h" />
+    <ClInclude Include="Game.hpp" />
+    <ClInclude Include="Menu.hpp" />
+    <ClInclude Include="Scene.hpp" />
+    <ClInclude Include="Table.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\blue_0.png" />

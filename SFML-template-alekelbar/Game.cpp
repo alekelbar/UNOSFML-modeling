@@ -1,8 +1,7 @@
 #pragma once
-#include "Game.h"
+#include "Game.hpp"
 
-
-// Constructores y descructores...
+// constructors and destructors
 Game::Game() {
 	initVariables();
 	initWindow();
@@ -15,10 +14,20 @@ Game::~Game() {
 // functions
 void Game::update()
 {
+	this->scene->update();
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+		this->setScene(new Table());
+	}
 }
 
 void Game::render()
 {
+	window->clear(sf::Color(255, 255, 255, 1));
+
+	// Draw elements 
+	this->scene->render(*window);
+
+	window->display();
 }
 
 void Game::pollEvents()
@@ -35,6 +44,7 @@ void Game::pollEvents()
 	}
 }
 
+
 bool Game::playing()
 {
 	return this->window->isOpen();
@@ -43,6 +53,7 @@ bool Game::playing()
 void Game::initVariables()
 {
 	this->window = nullptr;
+	this->scene = new Menu(); // initialize menu
 	this->videoMode = sf::VideoMode();
 	this->ev = sf::Event();
 }

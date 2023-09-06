@@ -1,7 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "CardModel.hpp"
-#include "Game.h"
+#include "Game.hpp"
 
 int main() {
 	// Ciclo de juego...
