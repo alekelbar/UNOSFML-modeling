@@ -7,7 +7,7 @@ class Scene
 public:
 	Scene() {};
 	
-	virtual void update() {};
+	virtual void update(sf::RenderWindow& w) {};
 
 	virtual void render(sf::RenderWindow& w) {};
 

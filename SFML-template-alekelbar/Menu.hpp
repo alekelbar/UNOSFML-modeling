@@ -1,11 +1,11 @@
 #pragma once
-#include "Scene.hpp"
+#include "Game.hpp"
+#include "Table.h"
 
 class Menu : public Scene
 {
 private:
-	sf::Sprite button_sp;
-	sf::Texture button_tx;
+	sf::CircleShape circle;
 
 public:
 	Menu();
@@ -13,7 +13,7 @@ public:
 	~Menu();
 
 	// overrides
-	void update() override;
+	void update(sf::RenderWindow& w) override;
 
 	void render(sf::RenderWindow& w) override;
 

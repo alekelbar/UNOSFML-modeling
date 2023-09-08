@@ -1,11 +1,7 @@
 #include "Menu.hpp"
 
-Menu::Menu() { 
-	if (!button_tx.loadFromFile("assets/blue_0.png")) {
-		std::cout << "Error con un asset";
-	}
-	button_sp.setTexture(button_tx);
-	button_sp.setPosition(0, 0);
+
+Menu::Menu() {
 }
 
 Menu::~Menu()
@@ -14,12 +10,27 @@ Menu::~Menu()
 
 // functions
 
-void Menu::update()
+void Menu::update(sf::RenderWindow& w)
 {
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+		auto circleBounds = circle.getGlobalBounds();
+		auto mouse = sf::Mouse::getPosition(w);
+		auto mousePos = w.mapPixelToCoords(mouse);
+
+
+		if (circleBounds.contains(mousePos)) {
+			Game::getInstance().switchScene(new Table());
+		}
+	}
 }
 
 void Menu::render(sf::RenderWindow& w) {
-	w.draw(button_sp);
+	circle.setRadius(50);
+	auto windowsSize = w.getSize();
+	circle.setPosition((windowsSize.x / static_cast<float>(2)) - 25, (windowsSize.y / static_cast<float>(2)) - 25);
+
+	circle.setFillColor(sf::Color(0, 255, 0, 100));
+	w.draw(circle);
 };
 
 void Menu::pollEvents()
